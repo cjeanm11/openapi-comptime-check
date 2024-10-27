@@ -1,0 +1,23 @@
+openapi: 3.0.0
+info:
+  title: Sample API
+  version: 1.0.0
+paths:
+  /color:
+    get:
+      summary: Get color
+      responses:
+        '200':
+          description: 
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Color'
+components:
+  schemas:
+    Color:
+      type: object
+      properties:
+        color:
+          type: string
+          enum: [RED, GREEN, BLUE, YELLOW]

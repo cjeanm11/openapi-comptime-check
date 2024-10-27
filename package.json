@@ -1,0 +1,28 @@
+{
+  "name": "openapi-comptime-check",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run src/index.ts",
+    "generate-types": "bun run openapi-typescript open-api/api.yml --output generated/api/api.ts",
+    "lint": "bun run eslint . --fix",
+    "type-check": "bun run tsc --noEmit",
+    "build": "bun run generate-types && bun run type-check"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@types/bun": "latest",
+    "@typescript-eslint/parser": "^8.11.0",
+    "eslint": "^9.13.0",
+    "globals": "^15.11.0",
+    "typescript-eslint": "^8.11.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@openapitools/openapi-generator-cli": "^2.15.0",
+    "@typescript-eslint/eslint-plugin": "^8.11.0",
+    "openapi-typescript": "^7.4.2"
+  }
+}
